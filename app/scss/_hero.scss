@@ -1,0 +1,45 @@
+.hero {
+    min-height: 100vh;
+    width: 100%;
+    background-color: lightcoral;
+    background-image: url('/images/mobile/image-header.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    position: relative;
+
+    @include for-tablet-portrait-up {
+        background-image: url('/images/desktop/image-header.jpg');
+    }
+
+    &__text-box {
+        width: 100%;
+        text-align: center;
+        position: absolute;
+        top: 30%;
+
+        .text-box--heading {
+            font-family: 'Fraunces', sans-serif;
+            font-size: 3rem;
+            font-weight: 900;
+            line-height: 1.7;
+            letter-spacing: .8rem;
+            text-transform: uppercase;
+            color: $white;
+            margin-bottom: 3.8rem;
+
+            span {
+                display: block;
+
+                @include for-desktop-up {
+                    display: inline;
+                }
+            }
+        }
+
+        >img {
+            width: 3rem;
+            margin: 0 auto;
+        }
+    }
+}

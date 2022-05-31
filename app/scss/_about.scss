@@ -1,0 +1,110 @@
+.about {
+    background-color: $white;
+
+    .about-1 {
+        @include for-tablet-landscape-up {
+            display: flex;
+            flex-direction: row-reverse;
+        }
+    }
+
+    .about-2 {
+        @include for-tablet-landscape-up {
+            display: flex;
+        }
+    }
+
+    &__upper {
+        @include for-tablet-landscape-up {
+            flex-basis: 50%;
+            flex-grow: 0;
+            flex-shrink: 0;
+        }
+    }
+
+    &__lower {
+        text-align: center;
+        padding-top: 5.5rem;
+        padding-bottom: 5.5rem;
+
+        @include for-tablet-landscape-up {
+            text-align: left;
+            flex-basis: 50%;
+            flex-grow: 0;
+        }
+
+        @include for-tablet-landscape-up {
+            // padding-left: 15.6rem;
+            // padding-top: 16rem;
+            // padding-right: 11.2rem;
+            padding-left: 10%;
+            padding-top: 10%;
+            padding-right: 10%;
+        }
+
+        >h2 {
+            font-size: 2.6rem;
+            color: $veryDarkDesaturatedBlue;
+            margin-bottom: 2.6rem;
+
+            >span {
+                display: block;
+            }
+        }
+
+        >p {
+            font-size: 1.5rem;
+            color: $veryDarkGrayishBlue;
+            margin-bottom: 2.6rem;
+        }
+
+        .cta-secondary {
+            font-family: 'Fraunces', sans-serif;
+            font-size: 1.4rem;
+            text-transform: uppercase;
+            color: $veryDarkDesaturatedBlue;
+            position: relative;
+            z-index: 999;
+
+
+
+
+            &::before {
+                content: '';
+                height: 8px;
+                width: 120%;
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                z-index: -999;
+                transform: translateX(-50%);
+                border-radius: 10px;
+                transition: background-color .3s ease-in-out;
+            }
+        }
+
+        .cta-1 {
+            &::before {
+                background-color: $lightYellow;
+            }
+
+            &:hover {
+                &::before {
+                    background-color: $yellow;
+                }
+            }
+        }
+
+        .cta-2 {
+            &::before {
+                background-color: $lightRed;
+            }
+
+            &:hover {
+                &::before {
+                    background-color: $red;
+                }
+            }
+        }
+    }
+}

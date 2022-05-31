@@ -1,0 +1,45 @@
+.footer {
+    padding-top: 4.8rem;
+    padding-bottom: 4.8rem;
+    background-color: $footerGreen;
+
+    >img {
+        width: 13.6rem;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 3.4rem;
+    }
+
+    &__links {
+        display: flex;
+        justify-content: center;
+        gap: 2.8rem;
+        font-size: 1.4rem;
+        margin-bottom: 6.9rem;
+
+        >a {
+            color: $green;
+            transition: color .3s ease-in-out;
+
+            &:hover {
+                color: $white;
+            }
+        }
+    }
+
+    &__socials {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        
+        >svg >path {
+            cursor: pointer;
+            transition: fill .3s ease-in-out;
+
+            &:hover {
+                fill: $white;
+            }
+        }
+    }
+}

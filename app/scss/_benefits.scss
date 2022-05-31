@@ -1,0 +1,80 @@
+.benefits {
+    @include for-tablet-landscape-up {
+        display: flex;
+    } 
+
+    &__first, &__second {
+        position: relative;
+
+        .first--textbox, .second--textbox {
+            text-align: center;
+            position: absolute;
+            bottom: 0;
+
+            >h2 {
+                margin-bottom: 2.6rem;
+            }
+
+            >p {
+                font-size: 1.5rem;
+                margin-bottom: 5.5rem;
+            }
+        }
+
+        .first--image {
+            .first--desktop-image{
+                display: block;
+            }
+            .first--mobile-image {
+                display: none;
+            }
+
+            @include for-phone-only {
+                .first--desktop-image {
+                    display: none;
+                }
+                .first--mobile-image {
+                    display: block;
+                }
+            }
+        }
+
+        .first--textbox {
+            >h2 {
+                color: $green;
+            }
+
+            >p {
+                color: $green;
+            }
+        }
+
+        .second--image {
+            .second--desktop-image{
+                display: block;
+            }
+            .second--mobile-image {
+                display: none;
+            }
+
+            @include for-phone-only {
+                .second--desktop-image {
+                    display: none;
+                }
+                .second--mobile-image {
+                    display: block;
+                }
+            }
+        }
+
+        .second--textbox {
+            >h2 {
+                color: $blue;
+            }
+
+            >p {
+                color: $blue;
+            }
+        }
+    }
+}

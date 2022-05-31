@@ -1,0 +1,12 @@
+.gallery {
+    @include for-tablet-portrait-up {
+        display: flex;
+    }
+    &__box {
+        display: flex;
+        
+        >img {
+            width: 50%;
+        }
+    }
+}

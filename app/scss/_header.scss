@@ -1,0 +1,118 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    min-height: 6.3rem;
+    min-width: 100%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+
+    &__links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: $white;
+        width: 80%;
+        padding-top: 3.3rem;
+        padding-bottom: 2.2rem;
+        margin-left: auto;
+        position: absolute;
+        top: 13vh;
+        left: 50%;
+        transform: translateX(-50%);
+        clip-path: polygon(96% 4%, 100% 0, 100% 100%, 0 100%, 0 4%);
+
+        @include for-desktop-up {
+            visibility: visible;
+            flex-direction: row;
+            background-color: transparent;
+            width: auto;
+            padding: 0rem;
+            position: static;
+            transform: none;
+        }
+
+        >a {
+            color: $veryDarkGrayishBlue;
+            width: 100%;
+            text-align: center;
+            display: block;
+            padding: 2rem 0;
+            position: relative;
+
+            @include for-desktop-up {
+
+                &:not(:last-child) {
+                    &::before {
+                        content: '';
+                        height: 5px;
+                        width: 60%;
+                        position: absolute;
+                        bottom: -1rem;
+                        left: 50%;
+                        margin-left: -30%;
+                        transform: scale(0);
+                        transition: all .3s ease-in-out;
+                    }
+    
+                    &:hover {
+                        &::before {
+                            transform: scaleX(100%);
+                            background-color: $yellow;
+                        }
+                    }
+                }   
+            }
+
+            &:hover {
+                background-color: lightgrey;
+
+                @include for-desktop-up {
+                    background-color: transparent;
+                }
+            }
+
+            @include for-desktop-up {
+                color: $white;
+                padding: 0 4.5rem;
+            }
+        }
+
+        .header--cta {
+            display: inline;
+            width: 14rem;
+            font-family: 'Fraunces', sans-serif;
+            color: $black;
+            background-color: $yellow;
+            margin: 1rem;
+            border-radius: 50px;
+            transition: background-color .3s ease-in-out;
+
+            @include for-desktop-up {
+                color: $black;
+                background-color: $white;
+                padding: 1.5rem 2.8rem;
+            }
+
+            &:hover {
+                background-color: $lightYellow;
+
+                @include for-desktop-up {
+                    color: $white;
+                    background-color: rgba(#6FCFFF, 0.8);
+                }
+            }
+        }
+    }
+
+    &__menu {
+        cursor: pointer;
+
+        @include for-desktop-up {
+            display: none;
+        }
+    }
+}
